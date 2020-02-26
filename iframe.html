@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        window.addEventListener('message', ({data}) => {
+            let popupContainerElement = document.querySelector('#popup-container');
+
+            if(popupContainerElement) {
+                popupContainerElement.remove();
+            }
+            
+            document.body.insertAdjacentHTML('afterBegin', data);
+        })
+    </script>
+</body>
+</html>
